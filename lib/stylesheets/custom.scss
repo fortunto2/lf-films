@@ -1,0 +1,38 @@
+.post-red{
+  background-color: #FFD3D2;
+}
+.post-blue{
+  background-color: #D2F5FF;
+}
+.post-yellow{
+  background-color: #FBFFD2;
+}
+.post-green{
+  background-color: #D2FFD2;
+}
+
+
+.card-avatar {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.card-thumbnail {
+  position: relative;
+}
+
+.duration {
+    position: absolute;
+    color: white;
+    font-size: 1rem;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2px 6px 3px 6px;
+    right: 6px;
+    bottom: 6px;
+}
+
+
+.card-block {
+    padding: 0.75rem;
+}
