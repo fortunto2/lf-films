@@ -13,7 +13,7 @@ Package.onUse( function(api) {
     'nova:base-components',
     'nova:posts',
     'nova:users'
-  ]);
+    ]);
 
   api.addFiles([
     'lib/modules.js'

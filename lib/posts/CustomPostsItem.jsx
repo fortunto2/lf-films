@@ -5,6 +5,19 @@ import moment from 'moment';
 import { ModalTrigger } from "meteor/nova:core";
 import { Link } from 'react-router';
 
+
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+
 class CustomPostsItem extends Telescope.components.PostsItem {
 
   render() {
@@ -12,60 +25,40 @@ class CustomPostsItem extends Telescope.components.PostsItem {
     const post = this.props.post;
 
 
-    let postClass = "card "; 
+    let postClass = "card ";
     if (post.sticky) postClass += " posts-sticky";
 
     if (post.color) {
       postClass += " post-"+post.color;
     }
 
+    let UsersName = <Telescope.components.UsersName user={post.user}/>;
+    let UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
+    let postedAt = <FormattedRelative value={post.postedAt}/>;
+
     return (
           <div className={postClass}>
 
-              <div className="card-block text-xs-center">
-                  <h5 className="card-title">            
-                      <Link to={Posts.getLink(post)} target={Posts.getLinkTarget(post)}>
-                      {post.title}
-                      </Link>
-                        {this.renderCategories()}
-                  </h5>
-              </div>
+              <Card>
 
-              
-                  <div className="card-thumbnail">
+                <CardMedia>
+                  <Telescope.components.PostsThumbnail post={post}/>
+                </CardMedia>
 
-                      <Telescope.components.PostsThumbnail post={post}/> 
+                <CardHeader
+                  title={post.title}
+                  subtitle={UsersName}
+                  avatar={UsersAvatar}
+                >              
+              </CardHeader>
 
-                      <div className="card-img-overlay">
-                            
-                          <span className="duration">10:00</span>
-
-                      </div>
-
-                  </div>
-
-
-              <div className="card-block">                 
-
-                  <Telescope.components.UsersAvatar user={post.user} size="small"/>
-                  <Telescope.components.UsersName user={post.user}/>
-                  <br />
-                  <span className="text-muted"><small>
-                    {post.hits} | <FormattedRelative value={post.postedAt}/>                      
-                  </small></span>
-
-
-                  {/* {(this.context.currentUser.isAdmin) ?<Telescope.components.PostsStats post={post} />:null}
-                   {this.renderActions()}
-                   */}
-
-              </div>
+              </Card>
 
           </div>
     )
   }
 };
-  
+
 CustomPostsItem.propTypes = {
   post: React.PropTypes.object.isRequired
 }
