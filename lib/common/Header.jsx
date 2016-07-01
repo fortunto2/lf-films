@@ -23,7 +23,9 @@ const CustomHeader = ({currentUser}) => {
           iconElementRight={
             <div>
               {currentUser ? <Telescope.components.UsersMenu user={currentUser}/> : <Telescope.components.UsersAccountMenu/>}
+              <Telescope.components.PostsNewButton/>
             </div>
+
           }
           className="appbar"
         />

@@ -1,10 +1,12 @@
 import React from 'react';
+
+import { ModalTrigger } from "meteor/nova:core";
 import { FormattedMessage, FormattedRelative } from 'react-intl';
+
 import Video from 'react-videojs';
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import AppBar from 'material-ui/AppBar';
 
 import Divider from 'material-ui/Divider';
 import IconMenu from 'material-ui/IconMenu';
@@ -52,10 +54,18 @@ const styles = {
   },
 };
 
+
 const PostsPage = ({document, currentUser}) => {
 
   const post = document;
   const htmlBody = {__html: post.htmlBody};
+
+  const renderEditPage = (
+    <ModalTrigger title="Edit Post" component={<a className="posts-action-edit"><FormattedMessage id="posts.edit"/></a>}>
+      <Telescope.components.PostsEditForm post={post}/>
+    </ModalTrigger>
+  );
+
 
   let UsersName = <Telescope.components.UsersName user={post.user}/>;
   let UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
@@ -68,10 +78,10 @@ const PostsPage = ({document, currentUser}) => {
 
         <CardMedia>
           <Video
-              src="https://dcr2ej3odfzos.cloudfront.net/49/baaaekxt_7-1-1-0.mp4"
+              src={post.filmUrl}
               type="video/mp4"
               onPlay={this.handlePlay}
-              poster="https://dcr2ej3odfzos.cloudfront.net/49/baaaekxt_7-1-1-0.mp4.jpg"
+              poster={post.thumbnailUrl}
               width="640px"
               height="360px"
               controls
@@ -105,9 +115,12 @@ const PostsPage = ({document, currentUser}) => {
                           <MenuItem primaryText="Share" leftIcon={<Share />}/>
                           <MenuItem primaryText="Download" leftIcon={<Download color={blue500} />} />
                           <MenuItem primaryText="Export to Youtube" />
-                          <Divider />
-                          <MenuItem primaryText="Edit Video" leftIcon={<MusicVideo color={blue500} />}/>
-                          <MenuItem primaryText="Delete" leftIcon={<Delete />}/>
+
+                            <Divider />
+                              <MenuItem primaryText="Edit Video" leftIcon={<MusicVideo color={blue500} />}/>
+                              <MenuItem primaryText="Edit Page" leftIcon={<MusicVideo color={blue500} />} onTouchTap={renderEditPage} />
+                              <MenuItem primaryText="Delete" leftIcon={<Delete />}/>
+
                       </IconMenu>
 
                 </ToolbarGroup>
@@ -149,6 +162,9 @@ const PostsPage = ({document, currentUser}) => {
                   {/*<SocialShare url={ Posts.getLink(post) } title={ post.title }/>*/}
               </CardText>
               <CardActions>
+                {(currentUser) ?<Telescope.components.PostsStats post={post} />:null}
+                {renderEditPage}
+
 
               </CardActions>
 

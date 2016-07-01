@@ -38,6 +38,7 @@ body {
 
 .appbar{
   display: flex;
+  z-index: 1 !important;
 }
 
 .floatRight{

@@ -5,10 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const CustomUsersAccountMenu = () => {
 
-  let log_in=<FormattedMessage id="users.log_in"/>
+  let log_in=<FormattedMessage id="users.log_in"/>;
 
   return (
-
 
     <Telescope.components.UsersAccountForm />
 

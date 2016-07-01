@@ -6,10 +6,6 @@ import { ModalTrigger } from "meteor/nova:core";
 import { Link } from 'react-router';
 
 
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -49,7 +45,7 @@ class CustomPostsItem extends Telescope.components.PostsItem {
                   title={post.title}
                   subtitle={UsersName}
                   avatar={UsersAvatar}
-                >              
+                >
               </CardHeader>
 
               </Card>

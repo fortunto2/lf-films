@@ -39,9 +39,9 @@ const CustomPostsList = ({results, currentUser, hasMore, ready, count, totalCoun
           <Telescope.components.PostsNoResults/>
         </div>
       </div>
-    )  
+    )
   }
-  
+
 };
 
 CustomPostsList.displayName = "CustomPostsList";
