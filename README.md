@@ -1,9 +1,7 @@
 # lf-films
 
-video template for 
-meteorjs telescope (nova react version)
-
-using bootsrap 4
+video template for Telescope Nova (meteor.js, react version)
+using material -ui
 
 #
 Telescope NOVA
