@@ -8,12 +8,12 @@ Package.onUse( function(api) {
 
   api.use([
     'fourseven:scss',
-
     'nova:core',
     'nova:base-components',
     'nova:posts',
+    'jrudio:videojs',
     'nova:users'
-  ]);
+    ]);
 
   api.addFiles([
     'lib/modules.js'

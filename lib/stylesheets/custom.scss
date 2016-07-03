@@ -1,3 +1,8 @@
+body {
+      // background-color: #2C2D2F;
+      background-color: #f5f5f5 !important;
+}
+
 .post-red{
   background-color: #FFD3D2;
 }
@@ -9,16 +14,6 @@
 }
 .post-green{
   background-color: #D2FFD2;
-}
-
-
-.card-avatar {
-  width: 3rem;
-  margin-right: 1rem;
-}
-
-.card-thumbnail {
-  position: relative;
 }
 
 .duration {
@@ -36,3 +31,59 @@
 .card-block {
     padding: 0.75rem;
 }
+
+.card {
+    border: none;
+}
+
+.appbar{
+  display: flex;
+  z-index: 1 !important;
+}
+
+.floatRight{
+  float: right;
+  z-index: 1;
+}
+
+.toolbar div:first-child {
+  display: flex;
+}
+
+.CardHeader div:first-child {
+  padding-right: 10px;
+}
+
+.v-align {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+// .vjs-default-skin .vjs-big-play-button {
+//
+//   $primary-foreground-color: #fff;
+//
+//   font-size: 3em;
+//
+//   $big-play-width: 3em;
+//   /* 1.5em = 45px default */
+//   $big-play-height: 1.5em;
+//
+//   line-height: $big-play-height;
+//   height: $big-play-height;
+//   width: $big-play-width;
+//
+//   /* 0.06666em = 2px default */
+//   border: 0.06666em solid $primary-foreground-color;
+//   /* 0.3em = 9px default */
+//   border-radius: 0.3em;
+//
+//   /* Align center */
+//   left: 50%;
+//   top: 50%;
+//   margin-left: -($big-play-width / 2);
+//   margin-top: -($big-play-height / 2);
+//
+// }
