@@ -5,6 +5,9 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
+import Divider from 'material-ui/Divider';
+import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
+
 // import DrawerLeft from './DrawerLeft.jsx';
 
 export default class AppBarTop extends React.Component {
@@ -49,8 +52,33 @@ export default class AppBarTop extends React.Component {
                       open={this.state.open}
                       onRequestChange={(open) => this.setState({open})}
                   >
-                      <MenuItem onTouchTap={this.handleClose.bind(this)}>Menu Item</MenuItem>
-                      <MenuItem onTouchTap={this.handleClose.bind(this)}>Menu Item 2</MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}>Home</MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}>Create Film</MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}>New Video</MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}>Popular</MenuItem>
+                  <MenuItem
+                    primaryText="#Tags"
+                    rightIcon={<ArrowDropRight />}
+                    menuItems={[
+                      <MenuItem primaryText="Family"   onTouchTap={this.handleClose.bind(this)}/>,
+                      <MenuItem primaryText="Sport"  onTouchTap={this.handleClose.bind(this)}/>,
+                      <MenuItem primaryText="Frends"  onTouchTap={this.handleClose.bind(this)}/>,
+                      <MenuItem primaryText="Business"  onTouchTap={this.handleClose.bind(this)}/>,
+                      <MenuItem primaryText="Other"  onTouchTap={this.handleClose.bind(this)}/>,
+                    ]}
+                  />
+                  <MenuItem
+                    primaryText="@Users"
+                    rightIcon={<ArrowDropRight />}
+                    menuItems={[
+                      <MenuItem primaryText="Grid lines"  onTouchTap={this.handleClose.bind(this)}/>,
+                      <MenuItem primaryText="Page breaks"   onTouchTap={this.handleClose.bind(this)}/>,
+                      <MenuItem primaryText="Rules"   onTouchTap={this.handleClose.bind(this)}/>,
+                    ]}
+                  />
+                    <Divider />
+                    <MenuItem onTouchTap={this.handleClose.bind(this)}>Help</MenuItem>
+
                   </Drawer>
            </div>
         )
