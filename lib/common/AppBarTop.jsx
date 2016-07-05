@@ -14,6 +14,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import ActionSearch from 'material-ui/svg-icons/action/search';
 
 // import DrawerLeft from './DrawerLeft.jsx';
+import LogInDialog from './LogInDialog.jsx';
 
 export default class AppBarTop extends React.Component {
 
@@ -60,7 +61,7 @@ export default class AppBarTop extends React.Component {
                         <IconButton tooltip="Search" touch={true} tooltipPosition="bottom-left">
                           <ActionSearch />
                         </IconButton>
-                        {currentUser ? <Telescope.components.UsersMenu user={currentUser}/> : <Telescope.components.UsersAccountMenu />}
+                        {currentUser ? <Telescope.components.UsersMenu user={currentUser}/> : <LogInDialog />}
 
                       </div>
                     }
