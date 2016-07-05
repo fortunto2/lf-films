@@ -41,6 +41,10 @@ body {
   z-index: 1 !important;
 }
 
+.fixFlex{
+  display: flex;
+}
+
 .floatRight{
   float: right;
   z-index: 1;

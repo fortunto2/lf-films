@@ -4,9 +4,14 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-
 import Divider from 'material-ui/Divider';
+import IconButton from 'material-ui/IconButton';
+
+import { Link } from 'react-router';
+
 import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import ActionSearch from 'material-ui/svg-icons/action/search';
 
 // import DrawerLeft from './DrawerLeft.jsx';
 
@@ -33,18 +38,32 @@ export default class AppBarTop extends React.Component {
 
       const currentUser=this.props.currentUser
 
+      function handleTouchTap() {
+        alert('onTouchTap triggered on the title component');
+      }
+
+      const styles = {
+        title: {
+          cursor: 'pointer',
+          color: '#ffffff',
+        },
+      };
+
         return (
             <div>
                 <AppBar
-                    title={siteTitle}
+                    title={<Link to={`/`} style={styles.title}>{siteTitle}</Link>}
                     onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
                     iconElementRight={
-                      <div>
-                        {currentUser ? <Telescope.components.UsersMenu user={currentUser}/> : <Telescope.components.UsersAccountMenu/>}
-                        <Telescope.components.PostsNewButton/>
-                      </div>
+                      <div className="fixFlex">
+                        <Telescope.components.PostsNewButton />
+                        <IconButton tooltip="Search" touch={true} tooltipPosition="bottom-left">
+                          <ActionSearch />
+                        </IconButton>
+                        {currentUser ? <Telescope.components.UsersMenu user={currentUser}/> : <Telescope.components.UsersAccountMenu />}
 
-                              }
+                      </div>
+                    }
                     className="appbar"
                 />
                   <Drawer

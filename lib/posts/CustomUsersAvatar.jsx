@@ -1,41 +1,44 @@
 import React, { PropTypes, Component } from 'react';
 // import Avatar from 'meteor-avatar-core';
 import { Avatar } from 'meteor/nova:core';
+import AvatarReact from 'material-ui/Avatar';
+import { Link } from 'react-router';
+import IconButton from 'material-ui/IconButton';
+
 
 const CustomUsersAvatar = ({user, size, link}) => {
 
-  const sizes = {
-    small: "3rem",
-    medium: "4rem",
-    large: "5rem"
-  }
+    const sizes = {
+      small: "3rem",
+      medium: "4rem",
+      large: "5rem"
+    }
 
-  const aStyle = {
-    borderRadius: "100%",
-    display: "inline-block",
-    height: sizes[size],
-    width: sizes[size],
-    marginRight: "1rem"
+    const aStyle = {
+      marginRight: "1rem"
+    };
 
-  };
-
-  const imgStyle = {
-    borderRadius: "100%",
-    display: "block",
-    height: sizes[size],
-    width: sizes[size]
-  };
-
-
+    // const initials = <span className="avatar-initials"><span>{Avatar.getInitials(user)}</span></span>;
+    // const avatar = avatarUrl ? img : initials;
 
     const avatarUrl = Avatar.getUrl(user);
 
-    const img = <img alt={Users.getDisplayName(user)} style={imgStyle} className="avatar" src={Avatar.getUrl(user)}/>;
-    const initials = <span className="avatar-initials"><span>{Avatar.getInitials(user)}</span></span>;
+    const ava = (
+      <AvatarReact
+          src={avatarUrl}
+        />
+    )
 
-    const avatar = avatarUrl ? img : initials;
+    const linkAva =(
+      <Link 
+        to={Users.getProfileUrl(user)}
+        style={aStyle}
+        >
+        {ava}
+      </Link>
+    )
 
-    return link ? <a style={aStyle} className="users-avatar" href={Users.getProfileUrl(user)}>{avatar}</a> : avatar;
+    return link ? linkAva : ava;
 
 
 

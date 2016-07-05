@@ -8,7 +8,7 @@ const CustomHeader = ({currentUser}) => {
   return (
 
     <div className="header-wrapper">
-      <AppBarTop />
+      <AppBarTop currentUser={currentUser}/>
    </div>
 
   )
