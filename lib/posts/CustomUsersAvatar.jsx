@@ -4,7 +4,7 @@ import { Avatar } from 'meteor/nova:core';
 import AvatarReact from 'material-ui/Avatar';
 import { Link } from 'react-router';
 import IconButton from 'material-ui/IconButton';
-
+import Users from 'meteor/nova:users';
 
 const CustomUsersAvatar = ({user, size, link}) => {
 
@@ -21,7 +21,7 @@ const CustomUsersAvatar = ({user, size, link}) => {
     // const initials = <span className="avatar-initials"><span>{Avatar.getInitials(user)}</span></span>;
     // const avatar = avatarUrl ? img : initials;
 
-    const avatarUrl = Avatar.getUrl(user);
+    const avatarUrl = Users.avatar.getUrl(user);
 
     const ava = (
       <AvatarReact
@@ -30,7 +30,7 @@ const CustomUsersAvatar = ({user, size, link}) => {
     )
 
     const linkAva =(
-      <Link 
+      <Link
         to={Users.getProfileUrl(user)}
         style={aStyle}
         >

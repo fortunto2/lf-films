@@ -5,6 +5,7 @@ import { Accounts } from 'meteor/std:accounts-ui';
 import { Modal} from 'react-bootstrap';
 import { ContextPasser } from "meteor/nova:core";
 import { LinkContainer } from 'react-router-bootstrap';
+import Users from 'meteor/nova:users';
 
 import { Link } from 'react-router';
 
@@ -48,7 +49,7 @@ class CustomUsersMenu extends Component {
               <FormattedMessage id="users.profile"/>
 
             </MenuItem>
-            
+
             <MenuItem
               linkButton
               containerElement={<Link to={`/account`} />}
