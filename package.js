@@ -1,6 +1,6 @@
 Package.describe({
   name: "lifefilm:lf-films",
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'video template for meteorjs telescope (nova react version)',
   git: 'https://github.com/fortunto2/lf-films.git',
   documentation: 'README.md'

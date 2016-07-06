@@ -3,6 +3,16 @@ body {
       background-color: #f5f5f5 !important;
 }
 
+$break-small: 767px;
+
+.hidden-xs {
+  @media screen and (max-width: $break-small) {
+    display: none !important;
+  }
+
+}
+
+
 .post-red{
   background-color: #FFD3D2;
 }
@@ -54,9 +64,10 @@ body {
   display: flex;
 }
 
-.CardHeader div:first-child {
-  padding-right: 10px;
+.CardHeader div {
+  padding-right: 10px !important;
 }
+
 
 .v-align {
     float: none;

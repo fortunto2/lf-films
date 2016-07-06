@@ -105,7 +105,7 @@ const PostsPage = ({document, currentUser}) => {
               </ToolbarGroup>
 
                 <ToolbarGroup  float="right">
-                    <RaisedButton label="Улучшить качество" primary={true} />
+                    <RaisedButton label="Улучшить качество" primary={true} className="hidden-xs"/>
 
                     <IconMenu
                         iconButtonElement={<IconButton  touch={true}><MoreVertIcon /></IconButton>}
