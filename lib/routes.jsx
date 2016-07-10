@@ -32,7 +32,7 @@ Meteor.startup(() => {
     {name:"posts.daily",    path:"daily",              component:Telescope.components.PostsDaily},
     {name:"posts.single",   path:"f/:_id", component:Telescope.components.PostsSingle},
     {name:"users.single",   path:"users/:slug",        component:Telescope.components.UsersSingle},
-    // {name:"users.single",   path:"users/:_id",        component:Telescope.components.UsersSingle},
+    // {name:"users.single",   path:"users/:username",        component:Telescope.components.UsersSingle},
     {name:"users.account",  path:"account",            component:Telescope.components.UsersAccount},
     {name:"users.edit",     path:"users/:slug/edit",   component:Telescope.components.UsersAccount}
   ]);

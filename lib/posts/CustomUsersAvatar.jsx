@@ -15,7 +15,8 @@ const CustomUsersAvatar = ({user, size, link}) => {
     }
 
     const aStyle = {
-      marginRight: "1rem"
+      marginRight: "1rem",
+      color: '#464646'
     };
 
     // const initials = <span className="avatar-initials"><span>{Avatar.getInitials(user)}</span></span>;

@@ -7,30 +7,47 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import {
   cyan500, cyan700,
-  tealA200,
-  grey100, grey300, grey400, grey500,grey700,
-  white, darkBlack, fullBlack
+  tealA200,pinkA200,pinkA400,pinkA100,
+  grey100, grey300, grey400, grey500,grey700,grey600,
+  white, darkBlack, fullBlack,fullWhite
 } from 'material-ui/styles/colors';
 // This replaces the textColor value on the palette
 // and then update the keys for each component that depends on it.
 // More on Colors: http://www.material-ui.com/#/customization/colors
-// import {fade} from 'material-ui/utils/colorManipulator';
+import {fade} from 'material-ui/utils/colorManipulator';
+// import spacing from 'material-ui/spacing';
+
 
 const muiTheme = getMuiTheme({
+  spacing: {
+      iconSize: 24,
+      desktopGutter: 24,
+      desktopGutterMore: 32,
+      desktopGutterLess: 16,
+      desktopGutterMini: 8,
+      desktopKeylineIncrement: 64,
+      desktopDropDownMenuItemHeight: 32,
+      desktopDropDownMenuFontSize: 15,
+      desktopDrawerMenuItemHeight: 48,
+      desktopSubheaderHeight: 48,
+      desktopToolbarHeight: 56,
+    },
+  fontFamily: 'Roboto, sans-serif',
   palette: {
-    primary1Color: grey500,
-    primary2Color: grey700,
-    // primary3Color: grey400,
-    // accent1Color: tealA200,
-    // accent2Color: grey100,
-    // accent3Color: grey500,
-    // textColor: darkBlack,
-    // alternateTextColor: white,
-    // canvasColor: white,
-    // borderColor: grey300,
-    // disabledColor: fade(darkBlack, 0.3),
-    // pickerHeaderColor: grey500,
-    // clockCircleColor: fade(darkBlack, 0.07),
+    primary1Color: cyan700,
+    primary2Color: cyan700,
+    primary3Color: grey600,
+    accent1Color: pinkA200,
+    accent2Color: pinkA400,
+    accent3Color: pinkA100,
+    textColor: fullWhite,
+    secondaryTextColor: fade(fullWhite, 0.7),
+    alternateTextColor: '#303030',
+    canvasColor: '#303030',
+    borderColor: fade(fullWhite, 0.3),
+    disabledColor: fade(fullWhite, 0.3),
+    pickerHeaderColor: fade(fullWhite, 0.12),
+    clockCircleColor: fade(fullWhite, 0.12),
     // shadowColor: fullBlack,
   }
 });
@@ -43,7 +60,6 @@ class CustomLayout extends Component {
     return (
 
       <MuiThemeProvider  muiTheme={muiTheme}>
-
 
         <div className="wrapper" id="wrapper">
 

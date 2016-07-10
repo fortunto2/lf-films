@@ -1,18 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router';
+
 
 const CustomPostsThumbnail = ({post}) => {
 
+	let tUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.thumbnailUrl;
+
 	if (post.thumbnailUrl) {
 	  return (
-	    <a href={Posts.getLink(post)} target={Posts.getLinkTarget(post)}>
-	      <img className="img-fluid" src={Posts.getThumbnailUrl(post)} />
-	    </a>
+	    <Link to={Posts.getLink(post)}>
+	      <img className="img-fluid" src={tUrl} />
+	    </Link>
 	  )
 	} else {
 	  return (
-	    <a href={Posts.getLink(post)} target={Posts.getLinkTarget(post)}>
+	    <Link href={Posts.getLink(post)}>
 	      <img className="img-fluid" src="//dcr2ej3odfzos.cloudfront.net/227874/baaae60a.mp4.jpg" />
-	    </a>
+	    </Link>
 	  )
 	}
 

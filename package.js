@@ -15,8 +15,10 @@ Package.onUse( function(api) {
     'nova:core@0.26.3-nova',
     'nova:base-components@0.26.3-nova',
     'nova:posts@0.26.3-nova',
+    'nova:users@0.26.3-nova',
     'jrudio:videojs@5.4.4',
-    'nova:users@0.26.3-nova'
+    // 'materialize:materialize',
+    // 'std:accounts-material@1.1.0'
     ]);
 
   api.addFiles([
