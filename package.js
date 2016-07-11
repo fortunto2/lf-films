@@ -16,7 +16,10 @@ Package.onUse( function(api) {
     'nova:base-components@0.26.3-nova',
     'nova:posts@0.26.3-nova',
     'nova:users@0.26.3-nova',
+    'nova:comments@0.26.4-nova',
+    // third-party packages
     'jrudio:videojs@5.4.4',
+
     // 'materialize:materialize',
     // 'std:accounts-material@1.1.0'
     ]);

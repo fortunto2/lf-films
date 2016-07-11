@@ -5,11 +5,10 @@ import AppBarTop from './AppBarTop.jsx';
 
 const CustomHeader = ({currentUser}) => {
 
+
   return (
 
-    <div className="header-wrapper">
       <AppBarTop currentUser={currentUser}/>
-   </div>
 
   )
 }

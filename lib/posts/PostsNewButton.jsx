@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 import { FormattedMessage, intlShape } from 'react-intl';
-import { Button } from 'react-bootstrap';
 import { ModalTrigger } from "meteor/nova:core";
 
 import IconButton from 'material-ui/IconButton';
@@ -13,14 +12,14 @@ const CustomPostsNewButton = (props, context) => {
     <IconButton tooltip={<FormattedMessage id="posts.new_post"/>} touch={true} tooltipPosition="bottom-left">
       <MovieFilter />
     </IconButton>
-  )
+  );
 
   return (
     <ModalTrigger size={size} title={context.intl.formatMessage({id: "posts.new_post"})} component={button}>
       <Telescope.components.PostsNewForm/>
     </ModalTrigger>
-  )
-}
+  );
+};
 
 CustomPostsNewButton.displayName = "CustomPostsNewButton";
 
@@ -28,7 +27,7 @@ CustomPostsNewButton.contextTypes = {
   currentUser: React.PropTypes.object,
   messages: React.PropTypes.object,
   intl: intlShape
-}
+};
 
 module.exports = CustomPostsNewButton;
 export default CustomPostsNewButton;

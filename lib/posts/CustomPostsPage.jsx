@@ -5,15 +5,15 @@ import { ModalTrigger } from "meteor/nova:core";
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 
 import Video from 'react-videojs';
-import {Card, CardActions, CardMedia } from 'material-ui/Card';
+import {Card, CardActions, CardMedia,CardText } from 'material-ui/Card';
 
 import PostToolbar from './PostToolbar.jsx';
-import PostMain from './PostMain.jsx';
 
 
 const PostsPage = ({document, currentUser}) => {
 
   const post = document;
+  const htmlBody = {__html: post.body};
 
   const renderEditPage = (
     <ModalTrigger title="Edit Post" component={<a className="posts-action-edit"><FormattedMessage id="posts.edit"/></a>}>
@@ -26,6 +26,13 @@ const PostsPage = ({document, currentUser}) => {
   let fUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.filmUrl;
 
 
+  const styles = {
+    card:{
+      // backgroundColor: 'none',
+      // boxShadow: 'none',
+      marginBottom: 16,
+    },
+  };
 
   return (
     <div className="posts-page">
@@ -46,20 +53,19 @@ const PostsPage = ({document, currentUser}) => {
 
         </CardMedia>
 
+      </Card>
+      <Card
+        style={styles.card}>
+
           <PostToolbar document={post}/>
-          <PostMain document={post}/>
 
-          <CardActions>
-            {(currentUser) ?<Telescope.components.PostsStats post={post} />:null}
-            {renderEditPage}
-
-
-          </CardActions>
+          {(currentUser) ?<CardActions>{renderEditPage}</CardActions>:null}
 
       </Card>
 
 
-      <Card>
+      <Card
+        style={styles.card}>
         <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
       </Card>
 

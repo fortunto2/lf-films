@@ -10,7 +10,7 @@ const PostsCommentsThread = ({document, currentUser}) => {
   const post = document;
 
   return (
-    <div className="posts-comments-thread">
+    <div>
       <CardTitle title={<FormattedMessage id="comments.comments"/>} />
       <CardText>
 

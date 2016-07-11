@@ -1,19 +1,19 @@
-import React, { PropTypes, Component } from 'react';
-import { FormattedMessage, FormattedRelative } from 'react-intl';
+import React from 'react';
+// import { FormattedMessage, FormattedRelative } from 'react-intl';
 // import { Button } from 'react-bootstrap';
-import moment from 'moment';
+// import moment from 'moment';
 // import { ModalTrigger } from "meteor/nova:core";
 import { Link } from 'react-router';
 
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardMedia, CardTitle} from 'material-ui/Card';
+// import FlatButton from 'material-ui/FlatButton';
 //
 // import IconMenu from 'material-ui/IconMenu';
 // import MenuItem from 'material-ui/MenuItem';
 // import IconButton from 'material-ui/IconButton/IconButton';
 // import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-import PostMiniToolbar from './PostMiniToolbar.jsx';
+// import PostMiniToolbar from './PostMiniToolbar.jsx';
 
 // import {
 //   cyan500, cyan700,
@@ -28,8 +28,6 @@ class CustomPostsItem extends Telescope.components.PostsItem {
   render() {
 
     const post = this.props.post;
-    const simple = true
-
 
     let postClass = "card ";
     if (post.sticky) postClass += " posts-sticky";
@@ -63,7 +61,7 @@ class CustomPostsItem extends Telescope.components.PostsItem {
         style={styles.title}
       >{post.title}
       </Link>
-    )
+    );
 
     return (
           <div className={postClass}>
@@ -85,13 +83,13 @@ class CustomPostsItem extends Telescope.components.PostsItem {
               </Card>
 
           </div>
-    )
+    );
   }
-};
+}
 
 CustomPostsItem.propTypes = {
   post: React.PropTypes.object.isRequired
-}
+};
 
 CustomPostsItem.contextTypes = {
   currentUser: React.PropTypes.object

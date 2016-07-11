@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { FlashContainer } from "meteor/nova:core";
 
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -42,8 +42,8 @@ const muiTheme = getMuiTheme({
     accent3Color: pinkA100,
     textColor: fullWhite,
     secondaryTextColor: fade(fullWhite, 0.7),
-    alternateTextColor: '#303030',
-    canvasColor: '#303030',
+    alternateTextColor: '#2e3e49',
+    canvasColor: '#2e3e49',
     borderColor: fade(fullWhite, 0.3),
     disabledColor: fade(fullWhite, 0.3),
     pickerHeaderColor: fade(fullWhite, 0.12),
@@ -73,8 +73,6 @@ class CustomLayout extends Component {
 
             <FlashContainer component={Telescope.components.FlashMessages}/>
 
-            <Telescope.components.Newsletter />
-
             {this.props.children}
 
           </div>
@@ -83,10 +81,13 @@ class CustomLayout extends Component {
 
         </div>
       </MuiThemeProvider>
-    )
+    );
 
   }
 }
+
+// <Telescope.components.Newsletter />
+
 
 CustomLayout.displayName = "CustomLayout";
 

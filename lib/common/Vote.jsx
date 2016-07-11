@@ -3,6 +3,10 @@ import React, { PropTypes, Component } from 'react';
 //import { Messages } from "meteor/nova:core";
 import classNames from 'classnames';
 import Users from 'meteor/nova:users';
+// import Events from 'meteor/nova:events';
+
+import IconButton from 'material-ui/IconButton';
+import ActionFavorite from 'material-ui/svg-icons/action/favorite';
 
 class Vote extends Component {
 
@@ -46,14 +50,18 @@ class Vote extends Component {
     );
 
     return (
-      <div className={actionsClass}>
-        <a className="upvote-button" onClick={this.upvote}>
-          <Telescope.components.Icon name="upvote" />
-          <div className="sr-only">Upvote</div>
-          <div className="vote-count">{post.baseScore || 0}</div>
-        </a>
-      </div>
-    )
+
+        <div>
+        <IconButton tooltip="likes" touch={true}
+          primary={true}
+          onClick={this.upvote}
+          >
+             <ActionFavorite />
+           </IconButton>
+           {post.baseScore || 0}
+         </div>
+
+    );
   }
 
 }
@@ -61,7 +69,7 @@ class Vote extends Component {
 Vote.propTypes = {
   post: React.PropTypes.object.isRequired, // the current post
   // currentUser: React.PropTypes.object, // the current user
-}
+};
 
 Vote.contextTypes = {
   currentUser: React.PropTypes.object,

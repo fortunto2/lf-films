@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+// import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
  const customContentStyle = {
@@ -54,8 +54,7 @@ export default class LogInDialog extends React.Component {
 
     return (
       <div style={paddingTop}>
-        <FlatButton label={log_in} onTouchTap={this.handleOpen.bind(this)}/>
-        <RaisedButton label="SIGN UP" primary={true} onTouchTap={this.handleOpen.bind(this)}/>
+        <RaisedButton label={log_in} primary={true} onTouchTap={this.handleOpen.bind(this)}/>
 
         <Dialog
           title="LOG IN"
