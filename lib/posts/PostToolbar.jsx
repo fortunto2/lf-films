@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Messages } from "meteor/nova:core";
 import { FormattedMessage, FormattedRelative } from 'react-intl';
-import { ModalTrigger } from "meteor/nova:core";
+// import { ModalTrigger } from "meteor/nova:core";
 // import { SocialShare } from "meteor/nova:share";
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
@@ -59,15 +59,26 @@ const PostToolbar = ({document,currentUser}) => {
   const post = document;
   // const htmlBody = {__html: post.body};
 
-  const renderEditPage = (
-    <ModalTrigger title="Edit Post" component={<a className="posts-action-edit"><FormattedMessage id="posts.edit"/></a>}>
-      <Telescope.components.PostsEditForm post={post}/>
-    </ModalTrigger>
-  );
+  // const renderEditPage = (
+  //   <ModalTrigger title="Edit Post" component={<a className="posts-action-edit"><FormattedMessage id="posts.edit"/></a>}>
+  //     <Telescope.components.PostsEditForm post={post}/>
+  //   </ModalTrigger>
+  // );
 
-  let UsersName = <Telescope.components.UsersName user={post.user}/>;
-  let UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
-  let postedAt = <FormattedRelative value={post.postedAt}/>;
+//for storybook
+  // if (currentUser=='story') {
+  //   console.log('story inter')
+  //   var UsersName = 'StoryBook';
+  //   var UsersAvatar = 'StoryBook';
+  //   var postedAt = 'StoryBook';
+  //
+  // }
+
+  var UsersName = <Telescope.components.UsersName user={post.user}/>;
+  var UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
+  var postedAt = <FormattedRelative value={post.postedAt}/>;
+
+
 
   let tUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.thumbnailUrl;
   let fUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.filmUrl;
@@ -157,7 +168,9 @@ const PostToolbar = ({document,currentUser}) => {
                       </CardHeader>
 
                       <CardText>
-                        <Telescope.components.HeadTags url={Posts.getLink(post)} title={post.title} image={post.thumbnailUrl} />
+                        {/*
+                          <Telescope.components.HeadTags url={Posts.getLink(post)} title={post.title} image={post.thumbnailUrl} />
+                          */}
                         {post.body}
                           {/*<SocialShare url={ Posts.getLink(post) } title={ post.title }/>*/}
                       </CardText>

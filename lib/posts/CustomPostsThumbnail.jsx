@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+// //for storybook
+// if (!Posts) {
+// 	var Posts = {
+// 	    getLink: () => ''
+// 	};
+//
+// }
 
 const CustomPostsThumbnail = ({post}) => {
 
@@ -14,7 +21,7 @@ const CustomPostsThumbnail = ({post}) => {
 	  )
 	} else {
 	  return (
-	    <Link href={Posts.getLink(post)}>
+	    <Link to={Posts.getLink(post)}>
 	      <img className="img-fluid" src="//dcr2ej3odfzos.cloudfront.net/227874/baaae60a.mp4.jpg" />
 	    </Link>
 	  )

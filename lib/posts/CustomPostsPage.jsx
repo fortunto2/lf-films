@@ -28,7 +28,7 @@ const PostsPage = ({document, currentUser}) => {
 
   const styles = {
     card:{
-      // backgroundColor: 'none',
+      backgroundColor: 'rgba(46, 62, 73, 0.23)',
       // boxShadow: 'none',
       marginBottom: 16,
     },
@@ -57,7 +57,7 @@ const PostsPage = ({document, currentUser}) => {
       <Card
         style={styles.card}>
 
-          <PostToolbar document={post}/>
+          <PostToolbar document={post} currentUser={currentUser}/>
 
           {(currentUser) ?<CardActions>{renderEditPage}</CardActions>:null}
 

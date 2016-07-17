@@ -4,6 +4,7 @@ import React from 'react';
 // import moment from 'moment';
 // import { ModalTrigger } from "meteor/nova:core";
 import { Link } from 'react-router';
+// import Users from 'meteor/nova:users';
 
 import {Card, CardMedia, CardTitle} from 'material-ui/Card';
 // import FlatButton from 'material-ui/FlatButton';
@@ -37,18 +38,32 @@ class CustomPostsItem extends Telescope.components.PostsItem {
     }
 
     let UsersName = <Telescope.components.UsersName user={post.user}/>;
+    // let UsersName = Users.getDisplayName(post.user);
     // let UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
     // let postedAt = <FormattedRelative value={post.postedAt}/>;
 
+    let tUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.thumbnailUrl;
 
     const styles = {
       overlay: {
-        height: '100%',
+        // height: '100%',
+        position: 'relative',
+        width: '100%',
+        height: 0,
+        paddingBottom: '56.25%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+        backgroundImage: 'url('+tUrl+')',
+        opacity: '0.6',
+
       },
       content: {
         padding: 16,
         position: 'absolute',
-        bottom: 0,
+        bottom: '25%',
+        textAlign: 'center',
+        width: '100%',
       },
       title : {
         color: '#ffffff'
@@ -68,17 +83,17 @@ class CustomPostsItem extends Telescope.components.PostsItem {
 
               <Card>
 
-                <CardMedia
-                  overlayContentStyle={styles.overlay}
-                  overlay={
-                    <CardTitle
-                      style={styles.content}
-                      title={title}
-                      subtitle={UsersName}
-                    />}
-                    >
-                  <Telescope.components.PostsThumbnail post={post}/>
-                </CardMedia>
+                <Link to={Posts.getLink(post)}>
+                    <div
+                      style={styles.overlay}>
+                    </div>
+                </Link>
+
+                <CardTitle
+                  style={styles.content}
+                  title={title}
+                  subtitle={UsersName}
+                />
 
               </Card>
 

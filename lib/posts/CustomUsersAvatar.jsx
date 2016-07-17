@@ -1,10 +1,21 @@
 import React, { PropTypes, Component } from 'react';
 // import Avatar from 'meteor-avatar-core';
-import { Avatar } from 'meteor/nova:core';
+// import { Avatar } from 'meteor/nova:core';
 import AvatarReact from 'material-ui/Avatar';
 import { Link } from 'react-router';
 import IconButton from 'material-ui/IconButton';
 import Users from 'meteor/nova:users';
+
+
+// const Users = {
+//   avatar: {
+//
+//     getUrl: () => {},
+//     getProfileUrl: () => {},
+//     getDisplayName: () => {},
+//     getInitials: () => {},
+//   }
+// }
 
 const CustomUsersAvatar = ({user, size, link}) => {
 
