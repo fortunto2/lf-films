@@ -3,6 +3,7 @@ import React from 'react';
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 // import { ModalTrigger } from "meteor/nova:core";
 // import { SocialShare } from "meteor/nova:share";
+import Users from 'meteor/nova:users';
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
@@ -13,43 +14,83 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton/IconButton';
 // import Badge from 'material-ui/Badge';
 // import Chip from 'material-ui/Chip';
-// import Avatar from 'material-ui/Avatar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 
 import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
+import { Grid, Row, Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import Avatar from 'material-ui/Avatar';
+
 
 // icons
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import Download from 'material-ui/svg-icons/file/file-download';
 import Delete from 'material-ui/svg-icons/action/delete';
-import Favorite from 'material-ui/svg-icons/action/favorite';
 import Share from 'material-ui/svg-icons/social/share';
 import MusicVideo from 'material-ui/svg-icons/av/music-video';
 import Eye from 'material-ui/svg-icons/image/remove-red-eye';
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 
+import Favorite from 'material-ui/svg-icons/action/favorite';
+import FavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
+import Checkbox from 'material-ui/Checkbox';
+
 
 const styles = {
   toolbar:{
-    height:70,
+    textAlign: 'center',
+    paddingBottom: 30,
+    backgroundColor: 'rgba(41, 56, 65, 0.3)',
+    position: 'relative',
+
+    // display: 'inline'
+    // height:70,
     // backgroundColor: 'none',
     // boxShadow: 'none',
-    display: 'inline'
   },
+  card:{
+    textAlign: 'center',
+    position: 'relative',
+    marginBottom: 16,
+    // backgroundColor: 'none',
+    // boxShadow: 'none',
+  },
+
   button: {
     margin: 16,
   },
   margin16:{margin: 16},
+
   menuRight:{
-    margin: 8,
-    float: 'right',
+    // margin: 8,
+    // float: 'right',
+    display: 'inline-block',
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    padding: 10,
+    zIndex: 1000,
+
   },
-  textRight:{
-    textAlign: 'right'
+
+  blockquote: {
+    fontSize: 24,
+    fontStyle: 'italic',
+    // marginLeft: '24px',
+    // marginRight: '24px',
+    position: 'relative',
+    textAlign: 'left',
+    margin: '0 34px',
+    border: 'none'
   },
+  favorite:{
+    position: 'absolute',
+    right: 20,
+    bottom: -40,
+    margin: 14,
+  }
 
 };
 
@@ -74,8 +115,16 @@ const PostToolbar = ({document,currentUser}) => {
   //
   // }
 
+  const avatarUrl = Users.avatar.getUrl(post.user);
+
   var UsersName = <Telescope.components.UsersName user={post.user}/>;
-  var UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
+  var UsersAvatar = (
+      <Avatar
+              src={avatarUrl}
+              size={60}
+              style={{marginTop:-46}}
+              />
+  )
   var postedAt = <FormattedRelative value={post.postedAt}/>;
 
 
@@ -112,89 +161,98 @@ const PostToolbar = ({document,currentUser}) => {
   }
 
 
+  if (post.body) {
+
+    var blockquoteBody = (
+      <blockquote style={styles.blockquote} className='blockquote'>
+        {post.body}
+      </blockquote>
+    )
+  }
+
+
   return (
+
+    <div>
 
         <Card
           style={styles.toolbar}>
 
 
-          <div className="row">
-            <div className="col-sm-8 col-md-8 col-xs-8">
+          <Row>
+            <Col xs={12} md={12}>
 
-              <CardTitle
-                title={post.title}
-                subtitle={musicName}
-                >
+                <CardTitle
+                  title={post.title}
+                  subtitle={musicName}
+                  className='cartTitle'
+                  titleStyle={{fontSize:40}}
+                  subtitleStyle={{fontSize:20}}
+                  >
 
-              </CardTitle>
-
-              </div>
-              <div className="col-sm-4 col-md-4 col-xs-4" style={styles.textRight}>
-
-                  {buyHD}
-                  {download}
-
-                  <IconMenu
-                      style={styles.menuRight}
-                      iconButtonElement={<IconButton  touch={true}><MoreVertIcon /></IconButton>}
-                      anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-                      targetOrigin={{horizontal: 'right', vertical: 'top'}}
-                    >
-                        <MenuItem primaryText="Share" leftIcon={<Share />}/>
-                        <MenuItem primaryText="Download" leftIcon={<Download color={blue500} />} />
-                        <MenuItem primaryText="Export to Youtube" />
-
-                          <Divider />
-                            <MenuItem primaryText="Edit Video" leftIcon={<MusicVideo color={blue500} />}/>
-                            <MenuItem primaryText="Edit Page" leftIcon={<MusicVideo color={blue500} />}  />
-                            <MenuItem primaryText="Delete" leftIcon={<Delete />}/>
-
-                    </IconMenu>
-
-                  </div>
-              </div>
+                </CardTitle>
 
 
+                <IconMenu
+                    style={styles.menuRight}
+                    iconButtonElement={<IconButton  touch={true}><MoreVertIcon /></IconButton>}
+                    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                    targetOrigin={{horizontal: 'right', vertical: 'top'}}
+                  >
+                      <MenuItem primaryText="Share" leftIcon={<Share />}/>
+                      <MenuItem primaryText="Download" leftIcon={<Download color={blue500} />} />
+                      <MenuItem primaryText="Export to Youtube" />
 
-              <div className="row">
-                <div className="col-sm-8 col-xs-8">
+                        <Divider />
+                          <MenuItem primaryText="Edit Video" leftIcon={<MusicVideo color={blue500} />}/>
+                          <MenuItem primaryText="Edit Page" leftIcon={<MusicVideo color={blue500} />}  />
+                          <MenuItem primaryText="Delete" leftIcon={<Delete />}/>
+
+                  </IconMenu>
+
+                  </Col>
+                </Row>
+            </Card>
+
+
+            <Card style={styles.card} >
 
                       <CardHeader
                         className="CardHeader"
                         title={UsersName}
                         subtitle={postedAt}
                         avatar={UsersAvatar}
+                        textStyle={{display: 'block'}}
+                        showExpandableButton={true}
+                        actAsExpander={true}
                         >
                       </CardHeader>
 
-                      <CardText>
+                      <CardText actAsExpander={true}>
+                      {blockquoteBody}
                         {/*
                           <Telescope.components.HeadTags url={Posts.getLink(post)} title={post.title} image={post.thumbnailUrl} />
                           */}
-                        {post.body}
-                          {/*<SocialShare url={ Posts.getLink(post) } title={ post.title }/>*/}
                       </CardText>
 
-                  </div>
-                  <div className="col-sm-2 col-xs-2" style={styles.textRight}>
+                      <CardActions expandable={true}>
 
-                    <Telescope.components.Vote post={post}  currentUser={currentUser}/>
+                        <Telescope.components.Vote post={post}  currentUser={currentUser}/>
 
-                  </div>
-                  <div className="col-sm-2 col-xs-2">
-
-                      <CardTitle
-                        style={styles.textRight}
-                        title={post.viewCount}
-                        subtitle="views"
-                        >
-                      </CardTitle>
-
-                  </div>
-                </div>
+                        <CardTitle
+                            title={post.viewCount}
+                            subtitle="views"
+                            >
+                          </CardTitle>
+                          {/*<SocialShare url={ Posts.getLink(post) } title={ post.title }/>*/}
+                          {buyHD}
+                          {download}
+                      </CardActions>
 
 
         </Card>
+
+    </div>
 
   )
   };

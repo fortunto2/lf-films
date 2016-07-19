@@ -82,7 +82,7 @@ export default class AppBarTop extends React.Component {
                       open={this.state.open}
                       onRequestChange={(open) => this.setState({open})}
                   >
-                      <MenuItem onTouchTap={this.handleClose.bind(this)}>Home</MenuItem>
+                      <MenuItem onTouchTap={this.handleClose.bind(this)}><Link to={`/`}>Home</Link></MenuItem>
                       <MenuItem onTouchTap={this.handleClose.bind(this)}>Create Film</MenuItem>
                       <MenuItem onTouchTap={this.handleClose.bind(this)}>New Video</MenuItem>
                       <MenuItem onTouchTap={this.handleClose.bind(this)}>Popular</MenuItem>

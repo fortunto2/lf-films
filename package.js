@@ -19,6 +19,7 @@ Package.onUse( function(api) {
     'nova:comments@0.26.4-nova',
     // third-party packages
     'jrudio:videojs@5.4.4',
+    'jimmiebtlr:react-flexbox-grid@0.9.5',
 
     // 'materialize:materialize',
     // 'std:accounts-material@1.1.0'

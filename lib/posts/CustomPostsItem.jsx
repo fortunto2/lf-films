@@ -1,27 +1,10 @@
 import React from 'react';
 // import { FormattedMessage, FormattedRelative } from 'react-intl';
-// import { Button } from 'react-bootstrap';
-// import moment from 'moment';
-// import { ModalTrigger } from "meteor/nova:core";
 import { Link } from 'react-router';
-// import Users from 'meteor/nova:users';
 
-import {Card, CardMedia, CardTitle} from 'material-ui/Card';
-// import FlatButton from 'material-ui/FlatButton';
-//
-// import IconMenu from 'material-ui/IconMenu';
-// import MenuItem from 'material-ui/MenuItem';
-// import IconButton from 'material-ui/IconButton/IconButton';
-// import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import { Grid, Row, Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import {Card, CardTitle} from 'material-ui/Card';
 
-// import PostMiniToolbar from './PostMiniToolbar.jsx';
-
-// import {
-//   cyan500, cyan700,
-//   tealA200,
-//   grey100, grey300, grey400, grey500,grey700,
-//   white, darkBlack, fullBlack
-// } from 'material-ui/styles/colors';
 
 
 class CustomPostsItem extends Telescope.components.PostsItem {
@@ -45,16 +28,32 @@ class CustomPostsItem extends Telescope.components.PostsItem {
     let tUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.thumbnailUrl;
 
     const styles = {
+
       overlay: {
-        // height: '100%',
+
+        display: 'flex',            /* establish flex container */
+        flexDirection: 'column',   /* stack flex items vertically */
+        position: 'relative',      /* establish neares positioned ancenstor for absolute positioning */
+
+      },
+
+      text: {
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        textAlign: 'center',
+      },
+
+      overlayImg: {
         position: 'relative',
-        width: '100%',
-        height: 0,
         paddingBottom: '56.25%',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
         backgroundImage: 'url('+tUrl+')',
+        height: '100%',
+        width: '100%',
         opacity: '0.6',
 
       },
@@ -64,9 +63,15 @@ class CustomPostsItem extends Telescope.components.PostsItem {
         bottom: '25%',
         textAlign: 'center',
         width: '100%',
+        // fontSize: '1vw'
       },
       title : {
         color: '#ffffff'
+      },
+      margin : {
+        marginBottom: 16,
+        position: 'relative'
+
       }
     };
 
@@ -79,25 +84,26 @@ class CustomPostsItem extends Telescope.components.PostsItem {
     );
 
     return (
-          <div className={postClass}>
 
-              <Card>
+              <Card
+                style={styles.margin}
+                >
 
-                <Link to={Posts.getLink(post)}>
-                    <div
-                      style={styles.overlay}>
-                    </div>
-                </Link>
+                    <Link to={Posts.getLink(post)}>
+                        <div
+                          style={styles.overlayImg}>
+                        </div>
+                    </Link>
 
-                <CardTitle
-                  style={styles.content}
-                  title={title}
-                  subtitle={UsersName}
-                />
+                    <CardTitle
+                      style={styles.text}
+                      title={title}
+                      subtitle={UsersName}
+                    />
+
 
               </Card>
 
-          </div>
     );
   }
 }
