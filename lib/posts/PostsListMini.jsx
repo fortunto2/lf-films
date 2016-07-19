@@ -12,7 +12,7 @@ const PostsListMini = ({results, currentUser, hasMore, ready, count, totalCount,
   if (!!results.length) {
     return (
       <div className="posts-list">
-          {results.map(post => <Col xs={6} md={12} style={{padding: 0}}><Telescope.components.PostsItem post={post} currentUser={currentUser} key={post._id}/></Col>)}
+          {results.map(post => <Col xs={6} md={12} style={{padding: 0}} key={post._id}><Telescope.components.PostsItem post={post} currentUser={currentUser} key={post._id}/></Col>)}
       </div>
     )
   } else if (!ready) {

@@ -56,13 +56,15 @@ const PostsPage = ({document, currentUser}) => {
     }
   };
 
+  // const vData = '{ "aspectRatio":"640:360", "playbackRates": [1, 1.5, 2, 4], "poster": "'+{tUrl}+'"}'
+
   return (
     <div>
-      <div style={styles.backgroundImage}></div>
+      <div style={styles.backgroundImage} className='hidden-xs'></div>
 
     <Grid  style={{margin: '0 auto'}}>
     <Row>
-    <Col xs={12} md={8}>
+    <Col xs={12} md={8} style={{padding: 0}}>
 
       <Card>
 
@@ -71,11 +73,17 @@ const PostsPage = ({document, currentUser}) => {
               src={fUrl}
               type="video/mp4"
               onPlay={this.handlePlay}
-              poster={tUrl}
+              autoplay
+              preload="auto"
               width="640px"
               height="360px"
               controls
-              data-setup='{ "aspectRatio":"640:360", "playbackRates": [1, 1.5, 2] }'
+              data-setup='{
+                "aspectRatio":"640:360",
+                "playbackRates": [1, 1.5, 2, 4],
+                "autoplay": "true",
+                "preload": "auto"
+              }'
             />
 
         </CardMedia>
