@@ -147,27 +147,11 @@ $break-small: 767px;
   top: -1.125rem;
   left: -2.25rem;
 }
-.blockquote::after {
-  content: "\201D";
-  /*Unicode for Left Double Quote*/
-  font-size: 4.5rem;
-  position: absolute;
-  bottom: -3.75rem;
-  right: -1.5rem;
-}
-
-
-.background-image {
-  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
-  /*background-image: url('https://dcr2ej3odfzos.cloudfront.net/49/baaaekxt_7-1-1-0.mp4.jpg');*/
-  background-size: cover;
-  display: block;
-  filter: blur(25px);
-  -webkit-filter: blur(25px);
-  height: 100%;
-  left: 0;
-  position: relative;;
-  right: 0;
-  z-index: -1;
-  opacity: 0.6;
-}
+// .blockquote::after {
+//   content: "\201D";
+//   /*Unicode for Left Double Quote*/
+//   font-size: 4.5rem;
+//   position: absolute;
+//   bottom: -3.75rem;
+//   right: -1.5rem;
+// }

@@ -1,10 +1,12 @@
 import React from 'react';
-// import { FormattedMessage, FormattedRelative } from 'react-intl';
+import { FormattedMessage, FormattedRelative } from 'react-intl';
 import { Link } from 'react-router';
 
-import { Grid, Row, Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Grid, Row, Col } from 'meteor/lifefilm:react-flexbox-grid';
 import {Card, CardTitle} from 'material-ui/Card';
 
+import Posts from "meteor/nova:posts";
+import Users from 'meteor/nova:users';
 
 
 class CustomPostsItem extends Telescope.components.PostsItem {
@@ -20,7 +22,11 @@ class CustomPostsItem extends Telescope.components.PostsItem {
       postClass += " post-"+post.color;
     }
 
-    let UsersName = <Telescope.components.UsersName user={post.user}/>;
+    if (post.user) {
+      var UsersName = <Telescope.components.UsersName user={post.user}/>;
+    } else {
+      const UsersName = '';
+    }
     // let UsersName = Users.getDisplayName(post.user);
     // let UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
     // let postedAt = <FormattedRelative value={post.postedAt}/>;

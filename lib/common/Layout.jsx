@@ -50,7 +50,9 @@ const muiTheme = getMuiTheme({
     clockCircleColor: fade(fullWhite, 0.12),
     // shadowColor: fullBlack,
   }
-});
+},
+{userAgent: 'all'}
+);
 
 
 class CustomLayout extends Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Grid, Row, Col } from 'meteor/lifefilm:react-flexbox-grid';
 
 const PostsListMini = ({results, currentUser, hasMore, ready, count, totalCount, loadMore, showHeader = true}) => {
 

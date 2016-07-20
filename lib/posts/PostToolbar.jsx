@@ -20,7 +20,7 @@ import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-mo
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 
-import { Grid, Row, Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Grid, Row, Col } from 'meteor/lifefilm:react-flexbox-grid';
 import Avatar from 'material-ui/Avatar';
 
 

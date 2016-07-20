@@ -19,7 +19,8 @@ Package.onUse( function(api) {
     'nova:comments@0.26.4-nova',
     // third-party packages
     'lifefilm:videojs@5.10.7',
-    'jimmiebtlr:react-flexbox-grid@0.9.5',
+    // 'lifefilm:react-flexbox-grid@0.9.5',
+    'lifefilm:react-flexbox-grid@0.9.5',
 
     // 'materialize:materialize',
     // 'std:accounts-material@1.1.0'

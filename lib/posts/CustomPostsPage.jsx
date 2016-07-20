@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import { ModalTrigger } from "meteor/nova:core";
+// import Posts from "meteor/nova:posts";
+
 import { FormattedMessage, FormattedRelative } from 'react-intl';
 
 import Video from 'react-videojs';
@@ -10,7 +12,7 @@ import {Card, CardActions, CardMedia,CardText } from 'material-ui/Card';
 import PostToolbar from './PostToolbar.jsx';
 import PostsRecomendations from './PostsRecomendations.jsx';
 
-import { Grid, Row, Col } from 'meteor/jimmiebtlr:react-flexbox-grid';
+import { Grid, Row, Col } from 'meteor/lifefilm:react-flexbox-grid';
 
 
 const PostsPage = ({document, currentUser}) => {
@@ -49,7 +51,7 @@ const PostsPage = ({document, currentUser}) => {
       WebkitFilter: 'blur(25px)',
       height: '100%',
       left: 0,
-      position: 'fixed',
+      position: 'absolute',
       right: 0,
       zIndex: -1,
       opacity: 0.6,
@@ -73,7 +75,6 @@ const PostsPage = ({document, currentUser}) => {
               src={fUrl}
               type="video/mp4"
               onPlay={this.handlePlay}
-              autoplay
               preload="auto"
               width="640px"
               height="360px"
