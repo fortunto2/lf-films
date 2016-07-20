@@ -1,10 +1,16 @@
 Package.describe({
   name: "lifefilm:lf-films",
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'video template for meteorjs telescope (nova react version)',
   git: 'https://github.com/fortunto2/lf-films.git',
   documentation: 'README.md'
 });
+
+Npm.depends({
+  //  'formsy-material-ui': '0.4.3',
+  // flexboxgrid: '6.3.0',
+});
+
 
 Package.onUse( function(api) {
 
