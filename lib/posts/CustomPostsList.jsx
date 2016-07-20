@@ -16,7 +16,7 @@ const CustomPostsList = ({results, currentUser, hasMore, ready, count, totalCoun
         <div className="posts-list">
         {showHeader ? <Telescope.components.PostsListHeader /> : null}
         <Row>
-          {results.map(post => <Col xs={12} md={6}><Telescope.components.PostsItem post={post} currentUser={currentUser} key={post._id}/></Col>)}
+          {results.map(post => <Col xs={12} md={6} key={post._id}><Telescope.components.PostsItem post={post} currentUser={currentUser} key={post._id}/></Col>)}
         </Row>
         {hasMore ? (ready ? <Telescope.components.PostsLoadMore loadMore={loadMore} count={count} totalCount={totalCount} /> : <Telescope.components.PostsLoading/>) : <Telescope.components.PostsNoMore/>}
         </div>

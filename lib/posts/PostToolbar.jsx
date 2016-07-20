@@ -117,7 +117,10 @@ const PostToolbar = ({document,currentUser}) => {
 
   const avatarUrl = Users.avatar.getUrl(post.user);
 
-  var UsersName = <Telescope.components.UsersName user={post.user}/>;
+  if (post.user) {
+    var UsersName = <Telescope.components.UsersName user={post.user}/>;
+  } else {UsersName = ''}
+
   var UsersAvatar = (
       <Avatar
               src={avatarUrl}
@@ -133,7 +136,6 @@ const PostToolbar = ({document,currentUser}) => {
   let fUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.filmUrl;
 
   let musicName= post.music.musicArtist + ' - ' + post.music.musicTitle;
-
 
   var buyHD=<RaisedButton style={styles.button} label="Улучшить качество"  primary={true} className='hidden-xs'/>;
 

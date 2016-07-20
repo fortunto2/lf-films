@@ -29,6 +29,7 @@ const PostsRecomendations = ({document,currentUser}) => {
         cacheSubscription={false}
         componentProps={{showHeader: false, mini:true}}
         listId="posts.list.main"
+        limit={6}
       />
     )
 
