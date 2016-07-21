@@ -25,9 +25,8 @@ Package.onUse( function(api) {
     'nova:comments@0.26.4-nova',
     // third-party packages
     'lifefilm:videojs@5.10.7',
-    // 'lifefilm:react-flexbox-grid@0.9.5',
     'lifefilm:react-flexbox-grid@0.9.5',
-
+    // 'lifefilm:lf-styles@0.26.4-nova',
     // 'materialize:materialize',
     // 'std:accounts-material@1.1.0'
     ]);
@@ -36,8 +35,25 @@ Package.onUse( function(api) {
     'lib/modules.js'
   ], ['client', 'server']);
 
+
   api.addFiles([
-    'lib/stylesheets/custom.scss'
+    'lib/stylesheets/normalize.min.css',
+    // 'lib/stylesheets/_breakpoints.scss',
+    // 'lib/stylesheets/_colors.scss',
+    // 'lib/stylesheets/_variables.scss',
+    // 'lib/stylesheets/_global.scss',
+    // 'lib/stylesheets/_accounts.scss',
+    // 'lib/stylesheets/_categories.scss',
+    // 'lib/stylesheets/_cheatsheet.scss',
+    // 'lib/stylesheets/_comments.scss',
+    // 'lib/stylesheets/_header.scss',
+    // 'lib/stylesheets/_forms.scss',
+    // 'lib/stylesheets/_other.scss',
+    // 'lib/stylesheets/_posts.scss',
+    // 'lib/stylesheets/_newsletter.scss',
+    // 'lib/stylesheets/_users.scss',
+    'lib/stylesheets/main.scss',
+
   ], ['client']);
 
 });

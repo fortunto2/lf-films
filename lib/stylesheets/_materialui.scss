@@ -1,0 +1,15 @@
+
+//fix error with flex in material-ui
+
+.appbar{
+  display: flex;
+  z-index: 1 !important;
+}
+
+.fixFlex{
+  display: flex;
+}
+
+.toolbar div:first-child {
+  display: flex;
+}

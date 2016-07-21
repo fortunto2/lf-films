@@ -1,0 +1,76 @@
+.duration {
+    position: absolute;
+    color: white;
+    font-size: 1rem;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2px 6px 3px 6px;
+    right: 6px;
+    bottom: 6px;
+}
+
+
+.CardHeader div {
+  padding-right: 10px !important;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+
+.cartTitle span {
+  font-family: 'EB Garamond', serif;
+  /*font-size: 60px;*/
+  /*text-transform: uppercase;*/
+  /*letter-spacing: 0.1em;*/
+  display: block;
+  font-style: normal;
+  /*padding-top: 0.1em;*/
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+}
+
+.blockquote::before {
+  content: "\201C";
+  /*Unicode for Left Double Quote*/
+  font-size: 4.5rem;
+  position: absolute;
+  top: -1.125rem;
+  left: -2.25rem;
+}
+
+// .blockquote::after {
+//   content: "\201D";
+//   /*Unicode for Left Double Quote*/
+//   font-size: 4.5rem;
+//   position: absolute;
+//   bottom: -3.75rem;
+//   right: -1.5rem;
+// }
+
+
+
+// .vjs-default-skin .vjs-big-play-button {
+//
+//   $primary-foreground-color: #fff;
+//
+//   font-size: 3em;
+//
+//   $big-play-width: 3em;
+//   /* 1.5em = 45px default */
+//   $big-play-height: 1.5em;
+//
+//   line-height: $big-play-height;
+//   height: $big-play-height;
+//   width: $big-play-width;
+//
+//   /* 0.06666em = 2px default */
+//   border: 0.06666em solid $primary-foreground-color;
+//   /* 0.3em = 9px default */
+//   border-radius: 0.3em;
+//
+//   /* Align center */
+//   left: 50%;
+//   top: 50%;
+//   margin-left: -($big-play-width / 2);
+//   margin-top: -($big-play-height / 2);
+//
+// }
