@@ -11,23 +11,23 @@ const PostsListMini = ({results, currentUser, hasMore, ready, count, totalCount,
 
   if (!!results.length) {
     return (
-      <div className="posts-list">
-          {results.map(post => <Col xs={6} md={12} style={{padding: 0}} key={post._id}><Telescope.components.PostsItem post={post} currentUser={currentUser} key={post._id}/></Col>)}
-      </div>
+      <Row>
+          {results.map(post => <Col xs={12} sm={6} md={12} key={post._id}><Telescope.components.PostsItem post={post} currentUser={currentUser} /></Col>)}
+      </Row>
     )
   } else if (!ready) {
     return (
-      <div className="posts-list">
+      <Row>
         {showHeader ? <Telescope.components.PostsListHeader /> : null}
           <Telescope.components.PostsLoading/>
-      </div>
+      </Row>
     )
   } else {
     return (
-      <div className="posts-list">
+      <Row>
         {showHeader ? <Telescope.components.PostsListHeader /> : null}
           <Telescope.components.PostsNoResults/>
-      </div>
+      </Row>
     )
   }
 

@@ -8,7 +8,17 @@ const subtitle = {
     color: '#9e9e9e'
 };
 
-const UsersName = ({user}) => <Link style={subtitle} to={Users.getProfileUrl(user)}>{Users.getDisplayName(user)}</Link>
+const UsersName = ({user}) => (
+
+    <Link 
+      style={subtitle}
+      to={Users.getProfileUrl(user)}
+      className='subTitleStyle'
+      >
+      {Users.getDisplayName(user)}
+    </Link>
+
+)
 
 UsersName.propTypes = {
   user: React.PropTypes.object.isRequired,

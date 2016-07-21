@@ -10,31 +10,57 @@
 }
 
 
-.CardHeader div {
-  padding-right: 10px !important;
-}
-
-
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 
-.cartTitle span {
+
+.cartTitle {
   font-family: 'EB Garamond', serif;
-  /*font-size: 60px;*/
-  /*text-transform: uppercase;*/
-  /*letter-spacing: 0.1em;*/
   display: block;
-  font-style: normal;
-  /*padding-top: 0.1em;*/
-  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+  font-size: $larger-font;
+  line-height: $larger-font*1.1;
+  margin-bottom: $vmargin;
+
+  span{
+    display: block;
+    font-style: normal;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: $vmargin;
+
+    @include small-medium{
+      font-size: $medium-font !important;
+      line-height: $medium-font*1.1 !important;
+    }
+  }
+
+  span:first-child {
+    @include small-medium{
+      font-size: $larger-header !important;
+      line-height: $larger-header*1.1 !important;
+    }
+  }
+
 }
+
+
+.blockquote {
+    @include small-medium{
+      font-size: $medium-font !important;
+      line-height: $medium-font*1.1 !important;
+    }
+  }
+
+
 
 .blockquote::before {
   content: "\201C";
-  /*Unicode for Left Double Quote*/
   font-size: 4.5rem;
   position: absolute;
   top: -1.125rem;
   left: -2.25rem;
+
+  @include small-medium{
+    font-size: $large-font*2 !important;
+  }
 }
 
 // .blockquote::after {

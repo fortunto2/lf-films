@@ -34,10 +34,40 @@ body {
 
 a{
   cursor: pointer;
+  text-decoration: none;
+  color: $white
 }
 
 .page-title{
   margin-bottom: $vmargin*2;
+}
+
+
+
+.subTitleStyle {
+  display: block;
+  font-size: $medium-font;
+  line-height: $medium-font*1.1;
+
+    @include small{
+      font-size: $smaller-font;
+      line-height: $smaller-font*1.1;
+    }
+  }
+
+
+.titleStyle {
+  display: block;
+  font-size: $larger-font;
+  line-height: $larger-font*1.1;
+  margin-bottom: $medium-font;
+
+    @include small-medium{
+      font-size: $medium-font;
+      line-height: $medium-font*1.1;
+      margin-bottom: $medium-font;
+    }
+
 }
 
 

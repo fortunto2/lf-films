@@ -22,10 +22,10 @@ class CustomPostsItem extends Telescope.components.PostsItem {
       postClass += " post-"+post.color;
     }
 
+    var UsersName = '';
+
     if (post.user) {
-      var UsersName = <Telescope.components.UsersName user={post.user}/>;
-    } else {
-      const UsersName = '';
+      UsersName = <Telescope.components.UsersName user={post.user}/>;
     }
     // let UsersName = Users.getDisplayName(post.user);
     // let UsersAvatar = <Telescope.components.UsersAvatar user={post.user} size="small"/>;
@@ -85,6 +85,7 @@ class CustomPostsItem extends Telescope.components.PostsItem {
       <Link
         to={Posts.getLink(post)}
         style={styles.title}
+        className="titleStyle"
       >{post.title}
       </Link>
     );

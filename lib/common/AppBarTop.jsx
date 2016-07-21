@@ -12,9 +12,12 @@ import { Link } from 'react-router';
 import ArrowDropRight from 'material-ui/svg-icons/navigation-arrow-drop-right';
 // import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import ActionSearch from 'material-ui/svg-icons/action/search';
+import Navigation from 'material-ui/svg-icons/navigation/menu';
 
 // import DrawerLeft from './DrawerLeft.jsx';
 import LogInDialog from './LogInDialog.jsx';
+
+import {grey50, grey300} from 'material-ui/styles/colors';
 
 export default class AppBarTop extends React.Component {
 
@@ -64,7 +67,12 @@ export default class AppBarTop extends React.Component {
                         {siteTitle}
                       </Link>
                     }
-                    onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+                    iconElementLeft={
+                      <IconButton
+                        onTouchTap={this.handleToggle.bind(this)}>
+                        <Navigation color={grey300} hoverColor={grey50}/>
+                    </IconButton>}
+
                     iconElementRight={
                       <div className="fixFlex">
                         <Telescope.components.PostsNewButton />
