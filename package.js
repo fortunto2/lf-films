@@ -16,16 +16,19 @@ Package.onUse( function(api) {
 
   api.versionsFrom("METEOR@1.3");
 
+  api.use('mongo', ['client', 'server']);
+
   api.use([
-    'fourseven:scss@3.4.1',
-    'nova:core@0.26.3-nova',
-    'nova:base-components@0.26.3-nova',
-    'nova:posts@0.26.3-nova',
-    'nova:users@0.26.3-nova',
-    'nova:comments@0.26.4-nova',
+    'fourseven:scss@3.8.0_1',
+    'nova:core@0.26.5-nova',
+    'nova:base-components@0.26.5-nova',
+    'nova:posts@0.26.5-nova',
+    'nova:users@0.26.5-nova',
+    'nova:comments@0.26.5-nova',
     // third-party packages
     'lifefilm:videojs@5.10.7',
     'lifefilm:react-flexbox-grid@0.9.5',
+    'ostrio:files@1.6.7',
     // 'lifefilm:lf-styles@0.26.4-nova',
     // 'materialize:materialize',
     // 'std:accounts-material@1.1.0'
