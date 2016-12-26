@@ -30,6 +30,7 @@ const PostsPage = ({document, currentUser}) => {
 
 
 
+
   let tUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.thumbnailUrl;
   let fUrl='http://dcr2ej3odfzos.cloudfront.net/'+post.filmUrl;
 

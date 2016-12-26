@@ -19,9 +19,9 @@ const PostsViews = (props, context) => {
   let views = ["top", "new", "best"];
   const adminViews = ["pending", "rejected", "scheduled"];
 
-  if (Users.is.admin(context.currentUser)) {
-    views = views.concat(adminViews);
-  }
+  // if (Users.is.admin(context.currentUser)) {
+  //   views = views.concat(adminViews);
+  // }
 
   // const {router} = this.props;
   // const currentViewSlug = router.location.query.view;

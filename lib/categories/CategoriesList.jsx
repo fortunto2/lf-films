@@ -76,7 +76,6 @@ class CategoriesList extends Component {
           />
 
           {categories && categories.length > 0 ? categories.map((category, index) => <Telescope.components.Category key={index} category={category} index={index} />) : null}
-          {Users.is.admin(this.context.currentUser) ? this.renderCategoryNewButton() : null}
 
       </Col>
     </Row>

@@ -1,5 +1,6 @@
 import React from 'react';
 // import { FormattedMessage } from 'react-intl';
+import Telescope from 'meteor/nova:lib';
 
 const Loading = Telescope.components.Loading;
 

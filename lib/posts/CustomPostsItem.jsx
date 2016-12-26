@@ -7,7 +7,7 @@ import {Card, CardTitle} from 'material-ui/Card';
 
 import Posts from "meteor/nova:posts";
 import Users from 'meteor/nova:users';
-
+import Telescope from 'meteor/nova:lib';
 
 class CustomPostsItem extends Telescope.components.PostsItem {
 
